@@ -1,11 +1,60 @@
 ==========
-Student ID:aa00794
-Student name:JaneX DoeX
-UUID:f0d95562-61ca-4d88-bfae-f67d290ef113
-Experiment time:2024-04-23 17:54:38
+Student ID:6797948
+Student name:Antoine EDY
+UUID:cf555967-a2c7-4392-9787-39f3c4852751
+Experiment time:2024-04-25 15:29:09
 ==========
 ==========
-Args:Namespace(root='/content', source_names=['veri'], target_names=['veri'], workers=4, split_id=0, height=224, width=224, train_sampler='RandomSampler', random_erase=False, color_jitter=False, color_aug=False, optim='adam', lr=0.0003, weight_decay=0.0005, momentum=0.9, sgd_dampening=0, sgd_nesterov=False, rmsprop_alpha=0.99, adam_beta1=0.9, adam_beta2=0.999, max_epoch=60, start_epoch=0, train_batch_size=32, test_batch_size=100, lr_scheduler='multi_step', stepsize=[20, 40], gamma=0.1, label_smooth=False, margin=0.3, num_instances=4, lambda_xent=1, lambda_htri=1, arch='mobilenet_v3_small', no_pretrained=False, load_weights='logs/mobilenet_v3_small-veri/model.pth.tar', evaluate=True, eval_freq=-1, start_eval=0, test_size=800, query_remove=True, print_freq=10, seed=1, resume='', save_dir='logs/mobilenet_v3_small-veri', use_cpu=False, gpu_devices='0', visualize_ranks=False, use_avai_gpus=False)
+Args:Namespace(root='/content', source_names=['veri'], target_names=['veri'], workers=4, split_id=0, height=224, width=224, train_sampler='RandomSampler', random_erase=False, color_jitter=False, color_aug=False, optim='adam', lr=0.0003, weight_decay=0.0005, momentum=0.9, sgd_dampening=0, sgd_nesterov=False, rmsprop_alpha=0.99, adam_beta1=0.9, adam_beta2=0.999, max_epoch=60, start_epoch=0, train_batch_size=32, test_batch_size=100, lr_scheduler='multi_step', stepsize=[20, 40], gamma=0.1, label_smooth=False, margin=0.3, num_instances=4, lambda_xent=1, lambda_htri=1, arch='mobilenet_v3_small', no_pretrained=False, load_weights='logs/mobilenet_v3_small-veri/model.pth.tar-10', evaluate=True, eval_freq=-1, start_eval=0, test_size=800, query_remove=True, print_freq=10, seed=1, resume='', save_dir='logs/mobilenet_v3_small-veri', use_cpu=False, gpu_devices='0', visualize_ranks=False, use_avai_gpus=False, random_translation=False, random_horizontal=False)
 ==========
+Currently using GPU 0
 Initializing image data manager
 => Initializing TRAIN (source) datasets
+=> VeRi loaded
+Image Dataset statistics:
+  ----------------------------------------
+  subset   | # ids | # images | # cameras
+  ----------------------------------------
+  train    |   576 |    37778 |        20
+  query    |   200 |     1678 |        19
+  gallery  |   200 |    11579 |        19
+  ----------------------------------------
+=> Initializing TEST (target) datasets
+=> VeRi loaded
+Image Dataset statistics:
+  ----------------------------------------
+  subset   | # ids | # images | # cameras
+  ----------------------------------------
+  train    |   576 |    37778 |        20
+  query    |   200 |     1678 |        19
+  gallery  |   200 |    11579 |        19
+  ----------------------------------------
+
+
+  **************** Summary ****************
+  train names      : ['veri']
+  # train datasets : 1
+  # train ids      : 576
+  # train images   : 37778
+  # train cameras  : 20
+  test names       : ['veri']
+  *****************************************
+
+
+Initializing model: mobilenet_v3_small
+Model size: 0.927 M
+Successfully loaded pretrained weights from "logs/mobilenet_v3_small-veri/model.pth.tar-10"
+Evaluate only
+Evaluating veri ...
+Extracted features for query set, obtained 1678-by-576 matrix
+Extracted features for gallery set, obtained 11579-by-576 matrix
+=> BatchTime(s)/BatchSize(img): 0.020/100
+Computing CMC and mAP
+Results ----------
+mAP: 45.3%
+CMC curve
+Rank-1  : 80.5%
+Rank-5  : 91.1%
+Rank-10 : 94.0%
+Rank-20 : 96.0%
+------------------
