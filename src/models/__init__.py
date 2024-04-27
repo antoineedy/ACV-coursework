@@ -10,7 +10,7 @@ from .resnet import (
 )
 from .tvmodels import mobilenet_v3_small, vgg16
 
-from .transformers import vit_l_16
+from .transformers import vit_l_16, vit_b_16
 
 
 __model_factory = {
@@ -24,6 +24,7 @@ __model_factory = {
     "mobilenet_v3_small": mobilenet_v3_small,
     "vgg16": vgg16,
     "vit_l_16": vit_l_16,
+    "vit_b_16": vit_b_16,
 }
 
 

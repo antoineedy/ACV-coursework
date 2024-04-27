@@ -4,7 +4,7 @@ import torch.nn as nn
 import torchvision.models as tvmodels
 
 
-__all__ = ["vit_l_16"]
+__all__ = ["vit_b_16", "vit_l_16"]
 
 
 class TorchVisionModel(nn.Module):
@@ -39,6 +39,17 @@ class TorchVisionModel(nn.Module):
 def vit_l_16(num_classes, loss={"xent"}, pretrained=True, **kwargs):
     model = TorchVisionModel(
         "vit_l_16",
+        num_classes=num_classes,
+        loss=loss,
+        pretrained=pretrained,
+        **kwargs,
+    )
+    return model
+
+
+def vit_b_16(num_classes, loss={"xent"}, pretrained=True, **kwargs):
+    model = TorchVisionModel(
+        "vit_b_16",
         num_classes=num_classes,
         loss=loss,
         pretrained=pretrained,
